@@ -7,6 +7,7 @@ public class SnakeTail : MonoBehaviour
   public float CircleDiameter;
   private List<Transform> snakeCircles = new List<Transform>();//Спискок трансформов в котрых будут храниться наши кружочки
   private List<Vector3> positions = new List<Vector3>();//Позици кружочков но не втекущий момент времени
+
   private void Awake()
   {
     positions.Add(SnakeHead.position);

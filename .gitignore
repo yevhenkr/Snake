@@ -42,7 +42,7 @@ ExportedObj/
 *.mdb
 *.opendb
 *.VC.db
-.vscode/
+vscode/
 *.gitattributes
 
 # Unity3D generated meta files

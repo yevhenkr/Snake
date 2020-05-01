@@ -4,6 +4,7 @@ public class GameContoller : MonoBehaviour
 {
   public GameObject mainMenuPanel;
   public FoodController foodSpawner;
+  public InfoPanel infoPanel;
   public GameObject snake;
 
   void Start()
@@ -19,6 +20,7 @@ public class GameContoller : MonoBehaviour
     //ActivateSnake();
     foodSpawner.CreatFood();
     snake.GetComponent<SnakeHade>().StartSnake();
+    infoPanel.RestartCount();
     //старт таймер
     //СТАРТ КОУНТ
     //инстанс змея

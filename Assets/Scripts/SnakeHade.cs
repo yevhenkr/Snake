@@ -7,6 +7,7 @@ public class SnakeHade : MonoBehaviour
   public GameObject snake;
   public GameContoller gameController;
   public FoodController foodController;
+  public InfoPanel infoPanel;
   public Vector3 startPos;
   public string nameFoodClone;
   public string nameTileClone;
@@ -84,6 +85,7 @@ public class SnakeHade : MonoBehaviour
   {
     foodController.CreatFood();
     snakeTails.AddCircle();
+    infoPanel.AddCount();
   }
 
 

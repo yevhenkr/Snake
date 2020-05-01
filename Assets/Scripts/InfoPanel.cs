@@ -1,18 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InfoPanel : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+  public int countFood;
+  public GameObject fff;
+  public Text text;
+  void Start()
+  {
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+  }
+
+  public void AddCount()
+  {
+    int i = int.Parse(text.text);
+    i++;
+    text.text = i.ToString();
+  }
+  public void RestartCount()
+  {
+    text.text = "0";
+  }
 }

@@ -1,17 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class InfoPanel : MonoBehaviour
 {
-  public int countFood;
-  public GameObject fff;
+  [Header("Count")]
   public Text text;
-  void Start()
-  {
-
-  }
 
   public void AddCount()
   {
@@ -19,8 +12,10 @@ public class InfoPanel : MonoBehaviour
     i++;
     text.text = i.ToString();
   }
+
   public void RestartCount()
   {
     text.text = "0";
   }
+
 }

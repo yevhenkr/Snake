@@ -42,6 +42,7 @@ public class SnakeTail : MonoBehaviour
       circle.GetComponent<BoxCollider2D>().isTrigger = false;
     }
     snakeCircles.Add(circle);
+    // snakeCircles.[snakeCircles.Count]().gameObject.S;
     positions.Add(circle.position);
   }
 

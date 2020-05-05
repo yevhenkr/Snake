@@ -47,6 +47,22 @@ public class SnakeHade : MonoBehaviour
     {
       snake.transform.rotation *= Quaternion.Euler(0f, 0f, +angleTurn * Time.deltaTime);
     }
+    if (Input.touchCount > 0)
+    {
+      Touch myTouch = Input.GetTouch(0);
+      Vector3 mousePosition = Input.mousePosition;
+      mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+      Debug.Log("mousePosition = " + myTouch.position.x);
+      if (myTouch.position.x > 515)
+      {
+        snake.transform.rotation *= Quaternion.Euler(0f, 0f, -angleTurn * Time.deltaTime);
+        return;
+      }
+      else
+      {
+        snake.transform.rotation *= Quaternion.Euler(0f, 0f, +angleTurn * Time.deltaTime);
+      }
+    }
   }
 
   public void Move()
@@ -67,7 +83,7 @@ public class SnakeHade : MonoBehaviour
       SnakeEatFood();
       foodController.DestroitedFood(myCollision.gameObject);
     }
-    if (myCollision.gameObject.tag == nameTileClone)
+    if (myCollision.gameObject.name == nameTileClone)
     {
       DeathSnake("Змьека сьела хвост");
     }

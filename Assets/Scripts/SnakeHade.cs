@@ -1,10 +1,8 @@
-﻿
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class SnakeHade : MonoBehaviour
 {
-  public GameObject Snake;
+
   public GameContoller GameController;
   public FoodController FoodController;
   public InfoPanel InfoPanel;
@@ -18,13 +16,6 @@ public class SnakeHade : MonoBehaviour
 
   private SnakeTail SnakeTails;
 
-  void Start()
-  {
-    GameController = GameController.GetComponent<GameContoller>();
-    FoodController = FoodController.GetComponent<FoodController>();
-    SnakeTails = GetComponent<SnakeTail>();
-  }
-
   private void FixedUpdate()
   {
     if (gameObject.activeInHierarchy)
@@ -35,32 +26,42 @@ public class SnakeHade : MonoBehaviour
     }
   }
 
+  public void StartSnake()
+  {
+    gameObject.SetActive(true);
+    transform.position = startPos;
+  }
+
   public void Turn()
   {
     if (Input.GetKey(KeyCode.D))
     {
-      Snake.transform.rotation *= Quaternion.Euler(0f, 0f, -angleTurn * Time.deltaTime);
+      transform.rotation *= Quaternion.Euler(0f, 0f, -angleTurn * Time.deltaTime);
+      return;
+    }
+    if (Input.GetKey(KeyCode.A))
+    {
+      transform.rotation *= Quaternion.Euler(0f, 0f, +angleTurn * Time.deltaTime);
       return;
     }
 
-    if (Input.GetKey(KeyCode.A))
-    {
-      Snake.transform.rotation *= Quaternion.Euler(0f, 0f, +angleTurn * Time.deltaTime);
-    }
+    TurnInAndroid();
+  }
+  public void TurnInAndroid()
+  {
     if (Input.touchCount > 0)
     {
       Touch myTouch = Input.GetTouch(0);
       Vector3 mousePosition = Input.mousePosition;
       mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
-      Debug.Log("mousePosition = " + myTouch.position.x);
       if (myTouch.position.x > 515)
       {
-        Snake.transform.rotation *= Quaternion.Euler(0f, 0f, -angleTurn * Time.deltaTime);
+        transform.rotation *= Quaternion.Euler(0f, 0f, -angleTurn * Time.deltaTime);
         return;
       }
       else
       {
-        Snake.transform.rotation *= Quaternion.Euler(0f, 0f, +angleTurn * Time.deltaTime);
+        transform.rotation *= Quaternion.Euler(0f, 0f, +angleTurn * Time.deltaTime);
       }
     }
   }
@@ -70,17 +71,12 @@ public class SnakeHade : MonoBehaviour
     transform.position += transform.up / smoothMove;
   }
 
-  public void StartSnake()
-  {
-    gameObject.SetActive(true);
-    gameObject.transform.position = startPos;
-  }
 
   private void OnTriggerEnter2D(Collider2D myCollision)
   {
     if (myCollision.gameObject.name == nameFoodClone)
     {
-      SnakeEatFood();
+      EatFoodSnake();
       FoodController.DestroitedFood(myCollision.gameObject);
     }
     if (myCollision.gameObject.name == nameTileClone)
@@ -88,32 +84,30 @@ public class SnakeHade : MonoBehaviour
       DeathSnake("Змьека сьела хвост");
     }
   }
-  public void DeathSnake(string text)
-  {
-    Debug.Log(text);
-    gameObject.SetActive(false);
-
-    GameController.EndGame();
-    SnakeTails.RemoveAllTiles();
-    FoodController.DestroitedLastFood();
-  }
-  public void SnakeEatFood()
+  public void EatFoodSnake()
   {
     FoodController.CreatFood();
     SnakeTails.AddCircle();
     InfoPanel.AddCount();
   }
 
+  public void DeathSnake(string text)
+  {
+    gameObject.SetActive(false);
+    GameController.EndGame();
+    SnakeTails.RemoveAllTiles();
+    FoodController.DestroitedLastFood();
+  }
 
   private void CheckGoingOutField()
   {
     if (maxXPos < transform.position.x || -maxXPos > transform.position.x)
     {
-      DeathSnake("Выпокинули пределы поля");
+      DeathSnake("Вы покинули пределы поля");
     }
     if (maxYPos < transform.position.y || -maxYPos > transform.position.y)
     {
-      DeathSnake("Выпокинули пределы поля");
+      DeathSnake("Вы покинули пределы поля");
     }
   }
 }

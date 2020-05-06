@@ -268,10 +268,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33eea1d1b46d1dd47a661b28446048db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snake: {fileID: 242012214}
-  gameController: {fileID: 1487468039}
-  foodController: {fileID: 630337184}
-  infoPanel: {fileID: 1275050349}
+  Snake: {fileID: 242012214}
+  GameController: {fileID: 1487468039}
+  FoodController: {fileID: 630337184}
+  InfoPanel: {fileID: 1275050349}
   startPos: {x: 0, y: 0, z: 27}
   nameFoodClone: Food(Clone)
   nameTileClone: Cirkle(Clone)
@@ -357,7 +357,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SnakeHead: {fileID: 1539654140}
-  CircleDiameter: 2.5
+  circleDiameter: 2.5
 --- !u!1 &630337183
 GameObject:
   m_ObjectHideFlags: 0
@@ -457,8 +457,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7159d6ef3db0fc4693809a7747fc7bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameContoller: {fileID: 1487468039}
-  mainMenuPanel: {fileID: 861151174}
+  GameContoller: {fileID: 1487468039}
+  MainMenuPanel: {fileID: 861151174}
 --- !u!1 &861151174
 GameObject:
   m_ObjectHideFlags: 0
@@ -805,7 +805,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d29c8e01f21c62847a0e48a9f964f5c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 1754894916}
+  CountText: {fileID: 1754894916}
 --- !u!1 &1457698159
 GameObject:
   m_ObjectHideFlags: 0
@@ -818,7 +818,7 @@ GameObject:
   - component: {fileID: 1457698162}
   - component: {fileID: 1457698161}
   m_Layer: 5
-  m_Name: Text
+  m_Name: TimerText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -936,8 +936,7 @@ MonoBehaviour:
   InfoPanel: {fileID: 1275050349}
   GameOverText: {fileID: 82111358}
   Timer: {fileID: 1898734693}
-  Snake: {fileID: 242012214}
-  snake: {fileID: 242012217}
+  Snake: {fileID: 242012217}
 --- !u!1 &1539654139
 GameObject:
   m_ObjectHideFlags: 0
@@ -1262,7 +1261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4b2a7a7a4c12c04d84c248e00cd693e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerTimer: {fileID: 1457698161}
+  TimerText: {fileID: 1457698161}
 --- !u!114 &1898734694
 MonoBehaviour:
   m_ObjectHideFlags: 0

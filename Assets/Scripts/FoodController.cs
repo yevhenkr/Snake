@@ -29,7 +29,6 @@ public class FoodController : MonoBehaviour
 
   public void DestroitedFood(GameObject food)
   {
-    // StartCoroutine(Destroy(prefabFood));
     Destroy(food);
   }
   public void DestroitedLastFood()

@@ -387,7 +387,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50cffa47c1efad34285212fa85033e1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabFood: {fileID: 6004124563915439828, guid: b5e3c84e328517e43bca26a349179b9e,
+  PrefabFood: {fileID: 6004124563915439828, guid: b5e3c84e328517e43bca26a349179b9e,
     type: 3}
   maxPosX: 10.5
   minPosX: -10.5
@@ -931,12 +931,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f886d24ef972a945995ad78e61d25d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainMenuPanel: {fileID: 861151174}
-  foodSpawner: {fileID: 630337184}
-  infoPanel: {fileID: 1275050349}
-  gameOverText: {fileID: 82111358}
-  timer: {fileID: 1898734693}
-  snake: {fileID: 242012214}
+  MainMenuPanel: {fileID: 861151174}
+  FoodSpawner: {fileID: 630337184}
+  InfoPanel: {fileID: 1275050349}
+  GameOverText: {fileID: 82111358}
+  Timer: {fileID: 1898734693}
+  Snake: {fileID: 242012214}
+  snake: {fileID: 242012217}
 --- !u!1 &1539654139
 GameObject:
   m_ObjectHideFlags: 0

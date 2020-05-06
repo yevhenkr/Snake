@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FoodController : MonoBehaviour
 {
-  public GameObject prefabFood;
+  public GameObject PrefabFood;
   public float maxPosX;
   public float minPosX;
   public float maxPosY;
@@ -26,7 +26,7 @@ public class FoodController : MonoBehaviour
 
   private void Instantiate()
   {
-    go = Instantiate(prefabFood, position, Quaternion.identity);
+    go = Instantiate(PrefabFood, position, Quaternion.identity);
   }
 
   public void DestroitedFood(GameObject food)

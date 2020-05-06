@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class SnakeTail : MonoBehaviour
 {
-  public Transform SnakeHead;//Cсылка на голову змейки
-  public float CircleDiameter;
+  public Transform SnakeHead;
+  public float circleDiameter;
   private List<Transform> snakeCircles = new List<Transform>();//Спискок трансформов в котрых будут храниться наши кружочки
   private List<Vector3> positions = new List<Vector3>();//Позици кружочков но не втекущий момент времени
 
@@ -16,33 +16,32 @@ public class SnakeTail : MonoBehaviour
   private void Update()
   {
     float distance = ((Vector3)SnakeHead.position - positions[0]).magnitude;//Расстояыние между текущем положением головы и последним котрое сохранено
-    if (distance > CircleDiameter)//отошла ли голова на растояние своего диаметра
+    if (distance > circleDiameter)//отошла ли голова на растояние своего диаметра
     {
       // Направление от старого положения головы, к новому
       Vector3 direction;
       direction = ((Vector3)SnakeHead.position - positions[0]).normalized;
 
-      positions.Insert((0), (positions[0] + direction * CircleDiameter));
+      positions.Insert((0), (positions[0] + direction * circleDiameter));
       positions.RemoveAt(positions.Count - 1);
 
-      distance -= CircleDiameter;
+      distance -= circleDiameter;
     }
 
     for (int i = 0; i < snakeCircles.Count; i++)//пройтись по всем
     {
-      snakeCircles[i].position = Vector3.Lerp(positions[i + 1], positions[i], distance / CircleDiameter);
+      snakeCircles[i].position = Vector3.Lerp(positions[i + 1], positions[i], distance / circleDiameter);
     }
   }
 
   public void AddCircle()
   {
     Transform circle = Instantiate(SnakeHead, positions[positions.Count - 1], Quaternion.identity, transform);
-    if (snakeCircles.Count == 0)//Костыль отключаю тригер у первогопоявившегося
+    if (snakeCircles.Count == 0)//Костыль отключаю тригер у первого появившегося
     {
       circle.GetComponent<BoxCollider2D>().isTrigger = false;
     }
     snakeCircles.Add(circle);
-    // snakeCircles.[snakeCircles.Count]().gameObject.S;
     positions.Add(circle.position);
   }
 
@@ -57,8 +56,5 @@ public class SnakeTail : MonoBehaviour
         snakeCircles.RemoveAt(0);
       }
     }
-    // positions.RemoveAt(1);
   }
-
-
 }

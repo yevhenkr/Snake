@@ -1,20 +1,20 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-  public class InfoPanel : MonoBehaviour
+public class InfoPanel : MonoBehaviour
+{
+  [Header("Count")]
+  public Text CountText;
+
+  public void AddCount()
   {
-    [Header("Count")]
-    public Text text;
+    int i = int.Parse(CountText.text);
+    i++;
+    CountText.text = i.ToString();
+  }
 
-    public void AddCount()
-    {
-      int i = int.Parse(text.text);
-      i++;
-      text.text = i.ToString();
-    }
-
-    public void RestartCount()
-    {
-      text.text = "0";
-    }
+  public void RestartCount()
+  {
+    CountText.text = "0";
+  }
 }

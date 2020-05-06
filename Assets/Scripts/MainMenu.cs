@@ -4,24 +4,24 @@ using UnityEngine;
 
 public class MainMenu : MonoBehaviour
 {
-  public GameContoller gameContoller;
-  public GameObject mainMenuPanel;
+  public GameContoller GameContoller;
+  public GameObject MainMenuPanel;
   void Start()
   {
     OpenMainmenu();
   }
   public void OpenMainmenu()
   {
-    mainMenuPanel.SetActive(true);
+    MainMenuPanel.SetActive(true);
   }
   public void ClouseMainmenu()
   {
-    mainMenuPanel.SetActive(false);
+    MainMenuPanel.SetActive(false);
   }
 
   public void StartGame()
   {
-    gameContoller.StartGame();
+    GameContoller.StartGame();
     ClouseMainmenu();
   }
 

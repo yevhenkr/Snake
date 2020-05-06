@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class SnakeHade : MonoBehaviour
 {
-  public GameObject snake;
-  public GameContoller gameController;
-  public FoodController foodController;
-  public InfoPanel infoPanel;
+  public GameObject Snake;
+  public GameContoller GameController;
+  public FoodController FoodController;
+  public InfoPanel InfoPanel;
   public Vector3 startPos;
   public string nameFoodClone;
   public string nameTileClone;
@@ -16,13 +16,13 @@ public class SnakeHade : MonoBehaviour
   public float maxXPos;
   public float maxYPos;
 
-  private SnakeTail snakeTails;
+  private SnakeTail SnakeTails;
 
   void Start()
   {
-    gameController = gameController.GetComponent<GameContoller>();
-    foodController = foodController.GetComponent<FoodController>();
-    snakeTails = GetComponent<SnakeTail>();
+    GameController = GameController.GetComponent<GameContoller>();
+    FoodController = FoodController.GetComponent<FoodController>();
+    SnakeTails = GetComponent<SnakeTail>();
   }
 
   private void FixedUpdate()
@@ -39,13 +39,13 @@ public class SnakeHade : MonoBehaviour
   {
     if (Input.GetKey(KeyCode.D))
     {
-      snake.transform.rotation *= Quaternion.Euler(0f, 0f, -angleTurn * Time.deltaTime);
+      Snake.transform.rotation *= Quaternion.Euler(0f, 0f, -angleTurn * Time.deltaTime);
       return;
     }
 
     if (Input.GetKey(KeyCode.A))
     {
-      snake.transform.rotation *= Quaternion.Euler(0f, 0f, +angleTurn * Time.deltaTime);
+      Snake.transform.rotation *= Quaternion.Euler(0f, 0f, +angleTurn * Time.deltaTime);
     }
     if (Input.touchCount > 0)
     {
@@ -55,12 +55,12 @@ public class SnakeHade : MonoBehaviour
       Debug.Log("mousePosition = " + myTouch.position.x);
       if (myTouch.position.x > 515)
       {
-        snake.transform.rotation *= Quaternion.Euler(0f, 0f, -angleTurn * Time.deltaTime);
+        Snake.transform.rotation *= Quaternion.Euler(0f, 0f, -angleTurn * Time.deltaTime);
         return;
       }
       else
       {
-        snake.transform.rotation *= Quaternion.Euler(0f, 0f, +angleTurn * Time.deltaTime);
+        Snake.transform.rotation *= Quaternion.Euler(0f, 0f, +angleTurn * Time.deltaTime);
       }
     }
   }
@@ -81,7 +81,7 @@ public class SnakeHade : MonoBehaviour
     if (myCollision.gameObject.name == nameFoodClone)
     {
       SnakeEatFood();
-      foodController.DestroitedFood(myCollision.gameObject);
+      FoodController.DestroitedFood(myCollision.gameObject);
     }
     if (myCollision.gameObject.name == nameTileClone)
     {
@@ -93,15 +93,15 @@ public class SnakeHade : MonoBehaviour
     Debug.Log(text);
     gameObject.SetActive(false);
 
-    gameController.EndGame();
-    snakeTails.RemoveAllTiles();
-    foodController.DestroitedLastFood();
+    GameController.EndGame();
+    SnakeTails.RemoveAllTiles();
+    FoodController.DestroitedLastFood();
   }
   public void SnakeEatFood()
   {
-    foodController.CreatFood();
-    snakeTails.AddCircle();
-    infoPanel.AddCount();
+    FoodController.CreatFood();
+    SnakeTails.AddCircle();
+    InfoPanel.AddCount();
   }
 
 

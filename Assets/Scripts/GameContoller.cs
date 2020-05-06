@@ -8,7 +8,7 @@ public class GameContoller : MonoBehaviour
   public InfoPanel InfoPanel;
   public Text GameOverText;
   public Timer Timer;
-  public SnakeHade snake;
+  public SnakeHade Snake;
 
   void Start()
   {
@@ -18,7 +18,7 @@ public class GameContoller : MonoBehaviour
   public void StartGame()
   {
     FoodSpawner.CreatFood();
-    snake.StartSnake();
+    Snake.StartSnake();
     InfoPanel.RestartCount();
     Timer.RestartTimer();
   }

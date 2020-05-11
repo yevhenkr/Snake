@@ -5,6 +5,7 @@ public class SnakeHade : MonoBehaviour
 
   public GameContoller GameController;
   public FoodController FoodController;
+  public SnakeTail SnakeTails;
   public InfoPanel InfoPanel;
   public Vector3 startPos;
   public string nameFoodClone;
@@ -14,7 +15,6 @@ public class SnakeHade : MonoBehaviour
   public float maxXPos;
   public float maxYPos;
 
-  private SnakeTail SnakeTails;
 
   private void FixedUpdate()
   {

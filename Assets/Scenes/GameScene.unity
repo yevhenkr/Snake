@@ -268,7 +268,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33eea1d1b46d1dd47a661b28446048db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Snake: {fileID: 242012214}
   GameController: {fileID: 1487468039}
   FoodController: {fileID: 630337184}
   InfoPanel: {fileID: 1275050349}
@@ -279,6 +278,7 @@ MonoBehaviour:
   angleTurn: 180
   maxXPos: 10.9
   maxYPos: 23
+  SnakeTails: {fileID: 242012220}
 --- !u!212 &242012218
 SpriteRenderer:
   m_ObjectHideFlags: 0

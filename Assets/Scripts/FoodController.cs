@@ -31,8 +31,10 @@ public class FoodController : MonoBehaviour
   {
     Destroy(food);
   }
+
   public void DestroitedLastFood()
   {
     Destroy(go);
   }
+
 }

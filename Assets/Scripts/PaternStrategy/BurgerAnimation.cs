@@ -24,14 +24,8 @@ public class BurgerAnimation : MonoBehaviour
 	}
 	void Start ()
 	{
-		StartCoroutine(MoveInTitleGameObjects());
-		GUIAnimSystemFREE.Instance.SetGraphicRaycasterEnable(m_Canvas, false);
-	}
-	
-	IEnumerator MoveInTitleGameObjects()
-	{
-		yield return new WaitForSeconds(1.0f);
 		StartCoroutine(MoveInPrimaryButtons());
+		GUIAnimSystemFREE.Instance.SetGraphicRaycasterEnable(m_Canvas, false);
 	}
 	
 	// MoveIn all primary buttons
@@ -74,14 +68,19 @@ public class BurgerAnimation : MonoBehaviour
 	
 	void ToggleBar2()
 	{
+		
+		Debug.Log("ToggleBar2()");
 		m_Bar2_IsOn = !m_Bar2_IsOn;
 		if(m_Bar2_IsOn==true)
 		{// m_Bar2 moves in
 			m_Bar2.PlayInAnims(GUIAnimSystemFREE.eGUIMove.SelfAndChildren);
+			Debug.Log("m_Bar2_IsOn==true");
 		}
 		else
 		{// m_Bar2 moves out
 			m_Bar2.PlayOutAnims(GUIAnimSystemFREE.eGUIMove.SelfAndChildren);
+			Debug.Log("m_Bar2_IsOn==false");
+
 		}
 	}
 	#endregion // Toggle Button

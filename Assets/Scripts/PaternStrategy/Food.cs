@@ -4,8 +4,7 @@ using UnityEngine;
 
 public abstract class Food : MonoBehaviour
 {
-  // Start is called before the first frame update
-  protected Sprite image;
+  protected int countPoit;
   private IWalkBehaviour walkBehaviour;
 
 

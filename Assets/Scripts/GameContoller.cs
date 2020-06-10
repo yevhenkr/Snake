@@ -10,7 +10,7 @@ public class GameContoller : MonoBehaviour
   public Timer Timer;
   public SnakeHade Snake;
 
-  void Start()
+  private void Start()
   {
     MainMenuPanel.SetActive(true);
   }
@@ -29,5 +29,4 @@ public class GameContoller : MonoBehaviour
     Timer.StopTimer();
     GameOverText.enabled = true;
   }
-
 }

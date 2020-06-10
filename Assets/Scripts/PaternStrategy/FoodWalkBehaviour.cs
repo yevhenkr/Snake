@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 
-public class FoodWalkBehaviour : IWalkBehaviour
+public class AppleWalkBehaviour : IWalkBehaviour
 {
   private Transform foodTransform;
   private float speed;
-  public FoodWalkBehaviour(Transform pearTransform, float speed)
+  public AppleWalkBehaviour(Transform pearTransform, float speed)
   {
     this.foodTransform = pearTransform;
     this.speed = speed;
@@ -20,7 +20,6 @@ public class FoodWalkBehaviour : IWalkBehaviour
   public void Rotate(Vector3 direction)
   {
     foodTransform.Rotate(new Vector3(direction.x, direction.y, direction.z) * Time.deltaTime);
-    //transform.Rotate(new Vector3(0, 45, 0) * Time.deltaTime);
     Debug.LogFormat("Transform: {0}, Direction: {1}", foodTransform, direction);
 
   }

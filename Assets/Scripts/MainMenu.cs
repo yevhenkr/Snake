@@ -6,7 +6,7 @@ public class MainMenu : MonoBehaviour
   public GameContoller GameContoller;
   public GameObject MainMenuPanel;
 
-  void Start()
+  private void Start()
   {
     OpenMainmenu();
   }

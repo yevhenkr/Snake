@@ -13,14 +13,13 @@ namespace GameFood
         this.position = position;
       }
     }
-    [SerializeField]
-    private Vector3 direction;
+    [SerializeField] private Vector3 direction;
     private PlayerInfo playerInfo;
 
-    void Start()
+    private void Start()
     {
       playerInfo = new PlayerInfo(transform.position);
-      SetWalkBehaviour(new FoodWalkBehaviour(transform, .25f));
+      SetWalkBehaviour(new PearRotateBehaviour(transform, .25f));
     }
 
     private void FixedUpdate()

@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class InfoPanel : MonoBehaviour
 {
   [Header("Count")]
-  public Text CountText;
+  [SerializeField] private Text CountText;
 
   public void AddCount()
   {

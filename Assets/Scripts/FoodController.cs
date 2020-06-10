@@ -3,11 +3,11 @@
 public class FoodController : MonoBehaviour
 {
   public GameObject PrefabFood;
-  public float maxPosX;
-  public float minPosX;
-  public float maxPosY;
-  public float minPosY;
-  public float posZ;
+  [SerializeField] private float maxPosX;
+  [SerializeField] private float minPosX;
+  [SerializeField] private float maxPosY;
+  [SerializeField] private float minPosY;
+  [SerializeField] private float posZ;
 
   private Vector3 position;
   private GameObject go;
